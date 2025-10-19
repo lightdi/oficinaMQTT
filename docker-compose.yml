@@ -1,0 +1,10 @@
+services:
+  brocker:
+    container_name: mosquitto
+    build:
+      context: .
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./data:/mosquitto/data
+      - ./log:/mosquitto/log

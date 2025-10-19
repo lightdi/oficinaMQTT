@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5">
+    <title>Oficina MQTT - Chat (Jinja)</title>
+</head>
+<body>
+    <h1>Chat com Flask e MQTT</h1>
+    <p>Atualize a página para ver novas mensagens.</p>
+
+    <!-- O Jinja vai renderizar a lista de mensagens do servidor aqui -->
+    <ul>
+        {% for mensagem in mensagens %}
+            <li>{{ mensagem }}</li>
+        {% endfor %}
+    </ul>
+    
+    <!-- 
+        Este formulário agora envia os dados diretamente para o servidor Flask.
+        O 'action' aponta para a rota '/enviar' e o 'method' é 'POST'.
+    -->
+    <form action="/enviar" method="POST">
+        <!-- O atributo 'name="message"' é essencial para o Flask identificar o dado -->
+        <input type="text" name="message" placeholder="Digite sua mensagem..." autocomplete="off" size="50">
+        <button type="submit">Enviar</button> 
+    </form>
+
+</body>
+</html>
