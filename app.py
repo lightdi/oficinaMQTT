@@ -3,7 +3,7 @@ import threading
 import paho.mqtt.client as mqtt
 
 # ====== CONFIGURAÇÕES DO BROKER MQTT ======
-MQTT_BROKER = "localhost"
+MQTT_BROKER = "200.129.71.149"
 MQTT_PORT = 1883
 MQTT_TOPIC = "chat/oficina"
 
@@ -18,6 +18,7 @@ client = mqtt.Client()
 
 # ====== CALLBACKS MQTT ======
 def on_connect(client, userdata, flags, rc):
+    global estado
     if rc == 0:
         print("✅ Conectado ao broker MQTT")
         client.subscribe(MQTT_TOPIC)
