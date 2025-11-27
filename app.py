@@ -4,7 +4,7 @@ import paho.mqtt.client as mqtt
 
 # ====== CONFIGURAÇÕES DO BROKER MQTT ======
 MQTT_BROKER = "200.129.71.149"
-MQTT_PORT = 1883
+MQTT_PORT = 1884
 MQTT_TOPIC = "chat/oficina"
 
 
